@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu1osq2kc6tsi"]
+
+[ext_resource type="FontFile" uid="uid://cj6ddpgu8pfoo" path="res://materials/Burlesk-Regular.ttf" id="1_0ghdn"]
+[ext_resource type="Script" path="res://Player/EstimateLabel.gd" id="2_aqogc"]
+
+[node name="EstimateLabel" type="Label3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.198524, 0)
+pixel_size = 0.001
+text = "Молодец
+"
+font = ExtResource("1_0ghdn")
+font_size = 90
+outline_size = 16
+script = ExtResource("2_aqogc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

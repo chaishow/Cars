@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://doxvkqj50g0fy"
+path="res://.godot/imported/cat-couple (1).gif-dc0ed8d2a990febc22cddd589b81b320.tres"
+
+[deps]
+
+source_file="res://catmodels/cat-couple (1).gif"
+dest_files=["res://.godot/imported/cat-couple (1).gif-dc0ed8d2a990febc22cddd589b81b320.tres"]
+
+[params]
+
+frames_per_second=30

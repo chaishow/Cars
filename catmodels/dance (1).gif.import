@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://b4l6gkcg50kkn"
+path="res://.godot/imported/dance (1).gif-9e1e18147a54f41b9bc286c6b35ec137.tres"
+
+[deps]
+
+source_file="res://catmodels/dance (1).gif"
+dest_files=["res://.godot/imported/dance (1).gif-9e1e18147a54f41b9bc286c6b35ec137.tres"]
+
+[params]
+
+frames_per_second=30

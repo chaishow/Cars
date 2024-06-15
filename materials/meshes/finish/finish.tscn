@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://dt230adkvj7u2"]
+
+[ext_resource type="Script" path="res://materials/meshes/finish/finish.gd" id="1_elmiq"]
+[ext_resource type="Material" uid="uid://386d5xmc8mnj" path="res://materials/stolb_material.tres" id="1_ucv7a"]
+[ext_resource type="Texture2D" uid="uid://b760m3ytjqrw7" path="res://materials/checkmate.webp" id="2_1lmqg"]
+[ext_resource type="PackedScene" uid="uid://cuorm0tl0x4tb" path="res://materials/meshes/finish/zad.tscn" id="2_226ej"]
+[ext_resource type="FontFile" uid="uid://cj6ddpgu8pfoo" path="res://materials/Burlesk-Regular.ttf" id="3_y3w46"]
+
+[sub_resource type="Animation" id="Animation_vs15c"]
+resource_name = "ComeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -5, -3), Vector3(0, -0.3, -3), Vector3(0, -0.3, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.3, 0.3, 0.3), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lm4mq"]
+_data = {
+"ComeIn": SubResource("Animation_vs15c")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_gsgc2"]
+material = ExtResource("1_ucv7a")
+size = Vector3(0.1, 2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k83jw"]
+material = ExtResource("1_ucv7a")
+size = Vector3(0.1, 0.1, 2)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_f064y"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oacp4"]
+noise = SubResource("FastNoiseLite_f064y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvp0p"]
+albedo_color = Color(0.39689, 0.396889, 0.396889, 1)
+albedo_texture = ExtResource("2_1lmqg")
+albedo_texture_force_srgb = true
+normal_texture = SubResource("NoiseTexture2D_oacp4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_oe3bp"]
+material = SubResource("StandardMaterial3D_hvp0p")
+size = Vector2(2, 0.3)
+orientation = 0
+
+[node name="Finish" type="Node3D"]
+transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 0, -5, -3)
+script = ExtResource("1_elmiq")
+
+[node name="zad" parent="." instance=ExtResource("2_226ej")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lm4mq")
+}
+
+[node name="FinishGates" type="Node3D" parent="."]
+
+[node name="stolb" type="MeshInstance3D" parent="FinishGates"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0.515881, 0.95)
+mesh = SubResource("BoxMesh_gsgc2")
+skeleton = NodePath("../..")
+
+[node name="stolb2" type="MeshInstance3D" parent="FinishGates"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0.515881, -0.95)
+mesh = SubResource("BoxMesh_gsgc2")
+skeleton = NodePath("../..")
+
+[node name="perekladina" type="MeshInstance3D" parent="FinishGates"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 1.51588, 0)
+mesh = SubResource("BoxMesh_k83jw")
+skeleton = NodePath("../..")
+
+[node name="banner" type="MeshInstance3D" parent="FinishGates"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 1.26209, 0)
+mesh = SubResource("QuadMesh_oe3bp")
+skeleton = NodePath("../..")
+
+[node name="Label3D" type="Label3D" parent="FinishGates/banner"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.001, -0.0101113, 0)
+pixel_size = 0.001
+shaded = true
+modulate = Color(0.659833, 0.937069, 0.974618, 1)
+text = "F   i   n   i   s   h"
+font = ExtResource("3_y3w46")
+font_size = 320
+uppercase = true

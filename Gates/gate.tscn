@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmw5fybw423hd"]
+
+[ext_resource type="Script" path="res://Gates/gate.gd" id="1_rgetc"]
+[ext_resource type="PackedScene" uid="uid://d2xr116h3fllw" path="res://Gates/GateMesh.tscn" id="2_62s1q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pfe3m"]
+size = Vector3(0.8, 0.6, 0.01)
+
+[node name="Gate" type="Node3D"]
+script = ExtResource("1_rgetc")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 0.01)
+double_sided = false
+alpha_cut = 1
+
+[node name="GateMesh" parent="." instance=ExtResource("2_62s1q")]
+
+[node name="collision_area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.296496, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collision_area"]
+shape = SubResource("BoxShape3D_pfe3m")
+
+[connection signal="body_entered" from="collision_area" to="." method="_on_collision_area_body_entered"]

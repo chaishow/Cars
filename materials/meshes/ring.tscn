@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://ovg545ca4j4"]
+
+[ext_resource type="Material" uid="uid://386d5xmc8mnj" path="res://materials/stolb_material.tres" id="1_gnxxy"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gh3xk"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.02
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t1hwh"]
+top_radius = 0.38
+bottom_radius = 0.38
+height = 0.1
+
+[node name="Ring" type="CSGCombiner3D"]
+material_override = ExtResource("1_gnxxy")
+snap = 1e-06
+calculate_tangents = false
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+calculate_tangents = false
+mesh = SubResource("CylinderMesh_gh3xk")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="CSGMesh3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00308122, 0)
+operation = 2
+calculate_tangents = false
+mesh = SubResource("CylinderMesh_t1hwh")

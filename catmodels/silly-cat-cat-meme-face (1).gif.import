@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://m34cyq7xba8y"
+path="res://.godot/imported/silly-cat-cat-meme-face (1).gif-27c3d688dfe267bbddf982c542e0060c.tres"
+
+[deps]
+
+source_file="res://catmodels/silly-cat-cat-meme-face (1).gif"
+dest_files=["res://.godot/imported/silly-cat-cat-meme-face (1).gif-27c3d688dfe267bbddf982c542e0060c.tres"]
+
+[params]
+
+frames_per_second=30

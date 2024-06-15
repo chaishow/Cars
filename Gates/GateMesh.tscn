@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2xr116h3fllw"]
+
+[ext_resource type="Material" uid="uid://386d5xmc8mnj" path="res://materials/stolb_material.tres" id="1_65yc6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_32m4y"]
+size = Vector2(0.8, 0.6)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xa4y4"]
+material = ExtResource("1_65yc6")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.6
+
+[node name="Gate" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 0.0470715, 0.998892, 0, -0.998892, 0.0470715, 0, 0.308929, 0)
+mesh = SubResource("PlaneMesh_32m4y")
+
+[node name="stolb" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.4, 0, 0)
+mesh = SubResource("CylinderMesh_xa4y4")
+
+[node name="stolb2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.4, 0, 0)
+mesh = SubResource("CylinderMesh_xa4y4")

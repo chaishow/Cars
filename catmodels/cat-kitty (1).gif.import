@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://bh6g5se2lwkho"
+path="res://.godot/imported/cat-kitty (1).gif-d1b8eebf320df66d1decf28e25357251.tres"
+
+[deps]
+
+source_file="res://catmodels/cat-kitty (1).gif"
+dest_files=["res://.godot/imported/cat-kitty (1).gif-d1b8eebf320df66d1decf28e25357251.tres"]
+
+[params]
+
+frames_per_second=30

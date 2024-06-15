@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2m3vy16xp352"]
+
+[ext_resource type="Script" path="res://Gates/couple_gate.gd" id="1_m6485"]
+[ext_resource type="Script" path="res://Gates/FirstGate.gd" id="2_j7bh7"]
+[ext_resource type="PackedScene" uid="uid://d2xr116h3fllw" path="res://Gates/GateMesh.tscn" id="3_y86ll"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pfe3m"]
+size = Vector3(0.8, 0.6, 0.01)
+
+[node name="CoupleGate" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0104207)
+script = ExtResource("1_m6485")
+
+[node name="FirstGate" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+script = ExtResource("2_j7bh7")
+
+[node name="GateMesh" parent="FirstGate" instance=ExtResource("3_y86ll")]
+
+[node name="collision_area" type="Area3D" parent="FirstGate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.296496, 0.012688)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FirstGate/collision_area"]
+shape = SubResource("BoxShape3D_pfe3m")
+
+[node name="Label3D" type="Label3D" parent="FirstGate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 0.01)
+alpha_cut = 1
+
+[node name="FirstGate2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+script = ExtResource("2_j7bh7")
+
+[node name="GateMesh" parent="FirstGate2" instance=ExtResource("3_y86ll")]
+
+[node name="collision_area" type="Area3D" parent="FirstGate2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.296496, 0.012688)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FirstGate2/collision_area"]
+shape = SubResource("BoxShape3D_pfe3m")
+
+[node name="Label3D" type="Label3D" parent="FirstGate2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 0.01)
+alpha_cut = 1
+
+[connection signal="player_went_throught" from="FirstGate" to="." method="_on_first_gate_player_went_throught"]
+[connection signal="tree_exited" from="FirstGate" to="." method="_on_first_gate_tree_exited"]
+[connection signal="tree_exiting" from="FirstGate" to="." method="_on_first_gate_tree_exiting"]
+[connection signal="body_entered" from="FirstGate/collision_area" to="FirstGate" method="_on_collision_area_body_entered"]
+[connection signal="player_went_throught" from="FirstGate2" to="." method="_on_first_gate_player_went_throught"]
+[connection signal="tree_exited" from="FirstGate2" to="." method="_on_first_gate_tree_exited"]
+[connection signal="tree_exiting" from="FirstGate2" to="." method="_on_first_gate_tree_exiting"]
+[connection signal="body_entered" from="FirstGate2/collision_area" to="FirstGate2" method="_on_collision_area_body_entered"]

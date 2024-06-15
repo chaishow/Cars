@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://386d5xmc8mnj"]
+
+[ext_resource type="Texture2D" uid="uid://do7814anmvv87" path="res://materials/Manifold_07-128x128.png" id="1_7y3aa"]
+
+[resource]
+albedo_color = Color(0.413639, 0.509447, 1, 1)
+albedo_texture = ExtResource("1_7y3aa")
+albedo_texture_msdf = true
+emission_enabled = true
+emission = Color(0.411765, 0.509804, 1, 1)
+rim_enabled = true
+rim = 0.1

@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bru0g8axplnqk"]
+
+[ext_resource type="Texture2D" uid="uid://dbkvbnfaenb0h" path="res://buttons/current/b_1.png" id="1_bglbi"]
+[ext_resource type="FontFile" uid="uid://cj6ddpgu8pfoo" path="res://materials/Burlesk-Regular.ttf" id="1_nm1uc"]
+[ext_resource type="Texture2D" uid="uid://cawdrvt83y5y2" path="res://buttons/current/b_2.png" id="1_vu4lu"]
+[ext_resource type="Texture2D" uid="uid://dex87wtxp5v51" path="res://buttons/current/b_5.png" id="2_a6124"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pb17r"]
+texture = ExtResource("1_bglbi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fgwu"]
+texture = ExtResource("1_vu4lu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q4vlu"]
+texture = ExtResource("2_a6124")
+
+[resource]
+default_font = ExtResource("1_nm1uc")
+default_font_size = 30
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 4
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxTexture_pb17r")
+Button/styles/normal = SubResource("StyleBoxTexture_3fgwu")
+Button/styles/pressed = SubResource("StyleBoxTexture_q4vlu")

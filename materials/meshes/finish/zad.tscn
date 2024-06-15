@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuorm0tl0x4tb"]
+
+[ext_resource type="Material" uid="uid://bqch17mt4wmkm" path="res://materials/finish_material.tres" id="1_2k63i"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_63mr8"]
+material = ExtResource("1_2k63i")
+radius = 3.0
+height = 6.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hnkj2"]
+material = ExtResource("1_2k63i")
+top_radius = 1.6
+bottom_radius = 1.6
+height = 3.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kgsqw"]
+material = ExtResource("1_2k63i")
+top_radius = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akqe4"]
+albedo_color = Color(0.725363, 0, 0.0489736, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ktpoh"]
+material = SubResource("StandardMaterial3D_akqe4")
+radius = 0.15
+height = 0.3
+
+[sub_resource type="SphereMesh" id="SphereMesh_dnq6n"]
+
+[node name="zad" type="CSGCombiner3D"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79293, 0.767718, 0)
+mesh = SubResource("SphereMesh_63mr8")
+
+[node name="CSGMesh" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00107551, -0.147164, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_hnkj2")
+
+[node name="ear" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, -1.6, 2.5, 2.5)
+mesh = SubResource("CylinderMesh_kgsqw")
+
+[node name="ear2" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -1.6, 2.5, -2.5)
+mesh = SubResource("CylinderMesh_kgsqw")
+
+[node name="nose" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.58282, 0.976667, 1.88885, -4.26915e-08)
+mesh = SubResource("CapsuleMesh_ktpoh")
+
+[node name="eye" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 2.3, 1)
+mesh = SubResource("SphereMesh_dnq6n")
+
+[node name="eye2" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 2.3, -1)
+mesh = SubResource("SphereMesh_dnq6n")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(3.33333, 0, 1.42109e-14, 0, 3.33333, 0, -1.42109e-14, 0, 3.33333, 1, 1.63716, 2.84217e-14)
+light_color = Color(0.805019, 0.804748, 0.830216, 1)
+light_energy = 3.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(3.33333, 0, 1.42109e-14, 0, 3.33333, 0, -1.42109e-14, 0, 3.33333, -1.44306, 0.560619, 2.84217e-14)
+light_color = Color(0.921839, 0.818944, 0, 1)
+light_energy = 2.455

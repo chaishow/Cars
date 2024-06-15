@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://kfv861spk8u"]
+
+[ext_resource type="PackedScene" uid="uid://cmw5fybw423hd" path="res://Gates/gate.tscn" id="1_g2rr5"]
+[ext_resource type="Script" path="res://Gates/moving_gate.gd" id="2_f8mvp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_68ak3"]
+size = Vector3(0.7, 0.6, 0.01)
+
+[node name="MovingGate" instance=ExtResource("1_g2rr5")]
+script = ExtResource("2_f8mvp")
+
+[node name="CollisionShape3D" parent="collision_area" index="0"]
+shape = SubResource("BoxShape3D_68ak3")

@@ -1,0 +1,311 @@
+[gd_scene load_steps=23 format=3 uid="uid://b5j8rmjmuwuql"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_8rtrs"]
+[ext_resource type="PackedScene" uid="uid://dxmjq0rl3fycr" path="res://road_piece.tscn" id="1_txisy"]
+[ext_resource type="PackedScene" uid="uid://ddqexnw8rautf" path="res://Player/Player.tscn" id="3_cfewi"]
+[ext_resource type="Texture2D" uid="uid://1boeahqy1vvx" path="res://sky.png" id="4_es5e0"]
+[ext_resource type="Theme" uid="uid://bru0g8axplnqk" path="res://materials/new_theme.tres" id="5_c323c"]
+[ext_resource type="Script" path="res://RestartMenu.gd" id="5_dsonn"]
+[ext_resource type="Script" path="res://WorldEnvironment.gd" id="5_rg4df"]
+[ext_resource type="Script" path="res://Bank.gd" id="6_8cf4v"]
+[ext_resource type="Script" path="res://MoneyAmount.gd" id="7_mx43n"]
+[ext_resource type="Texture2D" uid="uid://cdruli06hankn" path="res://moneypic.png" id="8_6otee"]
+[ext_resource type="Script" path="res://StartMenu.gd" id="9_0e1ri"]
+[ext_resource type="Script" path="res://UpgradeButton.gd" id="10_bwfli"]
+[ext_resource type="Script" path="res://LevelLabel.gd" id="10_dv27v"]
+[ext_resource type="Script" path="res://CoefButton.gd" id="11_2lppd"]
+[ext_resource type="PackedScene" uid="uid://dt230adkvj7u2" path="res://materials/meshes/finish/finish.tscn" id="18_7b7iv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m1woo"]
+rough = true
+bounce = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qhpfu"]
+size = Vector3(1, 1, 50)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ve5my"]
+panorama = ExtResource("4_es5e0")
+
+[sub_resource type="Sky" id="Sky_cn46g"]
+sky_material = SubResource("PanoramaSkyMaterial_ve5my")
+radiance_size = 6
+
+[sub_resource type="Environment" id="Environment_jlr1j"]
+background_mode = 2
+sky = SubResource("Sky_cn46g")
+sky_custom_fov = 120.0
+sky_rotation = Vector3(2.61799, 6.28319, 0)
+ambient_light_source = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ocft"]
+size = Vector3(2, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v70ea"]
+size = Vector3(2, 1, 1)
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_8rtrs")
+
+[node name="road" type="Node3D" parent="."]
+
+[node name="RoadPiece" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="RoadPiece2" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="RoadPiece3" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="RoadPiece4" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="RoadPiece5" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="RoadPiece6" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="RoadPiece7" parent="road" instance=ExtResource("1_txisy")]
+
+[node name="RoadPiece8" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="RoadPiece9" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="RoadPiece10" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="RoadPiece11" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="RoadPiece12" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="RoadPiece13" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="RoadPiece14" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
+
+[node name="RoadPiece15" parent="road" instance=ExtResource("1_txisy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="GatesContainer" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.745139, 0.66691, 0, -0.66691, -0.745139, 0, 3.80186, -4.48717)
+
+[node name="RightBorder" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_m1woo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightBorder"]
+shape = SubResource("BoxShape3D_qhpfu")
+
+[node name="LeftBorder" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_m1woo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftBorder"]
+shape = SubResource("BoxShape3D_qhpfu")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jlr1j")
+script = ExtResource("5_rg4df")
+sky_rotation_speed = 0.008
+
+[node name="Player" parent="." instance=ExtResource("3_cfewi")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.12696, 16.1848)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_c323c")
+
+[node name="RestartMenu" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_dsonn")
+
+[node name="SellButton" type="Button" parent="UI/RestartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -121.0
+offset_right = 63.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Продать"
+icon_alignment = 1
+expand_icon = true
+
+[node name="FinishLabel" type="Label" parent="UI/RestartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -196.0
+offset_right = 50.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Новый котик"
+
+[node name="Bank" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 101.0
+offset_top = 43.0
+offset_right = 268.0
+offset_bottom = 84.0
+grow_horizontal = 2
+script = ExtResource("6_8cf4v")
+
+[node name="View" type="Control" parent="UI/Bank"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoneyAmount" type="Label" parent="UI/Bank/View"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "16,3 млн"
+script = ExtResource("7_mx43n")
+
+[node name="MoneyPic" type="TextureRect" parent="UI/Bank/View"]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 46.0
+texture = ExtResource("8_6otee")
+expand_mode = 1
+
+[node name="StartMenu" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_0e1ri")
+
+[node name="StartButton" type="Button" parent="UI/StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -131.0
+offset_right = 66.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Начать"
+icon_alignment = 1
+expand_icon = true
+
+[node name="UpgradeButton" type="Button" parent="UI/StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = 76.0
+offset_right = -156.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Прокачать котика
++100001
+"
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("10_bwfli")
+
+[node name="CoefButton" type="Button" parent="UI/StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 154.0
+offset_top = 76.0
+offset_right = 344.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Продавать дороже
++20% к стоимости"
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("11_2lppd")
+
+[node name="LevelLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.5
+offset_top = 52.0
+offset_right = -60.5
+offset_bottom = 75.0
+grow_horizontal = 2
+text = "Уровень 388
+"
+script = ExtResource("10_dv27v")
+
+[node name="FinishContainer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.5)
+
+[node name="FinishMesh" parent="FinishContainer" instance=ExtResource("18_7b7iv")]
+
+[node name="FinishArea" type="Area3D" parent="FinishContainer/FinishMesh"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinishContainer/FinishMesh/FinishArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.510678, 0)
+shape = SubResource("BoxShape3D_0ocft")
+
+[node name="PrepareFinishArea" type="Area3D" parent="FinishContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.87238)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinishContainer/PrepareFinishArea"]
+shape = SubResource("BoxShape3D_v70ea")
+
+[connection signal="level_changed" from="." to="UI/LevelLabel" method="_on_level_level_changed"]
+[connection signal="player_finished" from="." to="UI/RestartMenu" method="_on_level_player_finished"]
+[connection signal="button_up" from="UI/RestartMenu/SellButton" to="UI/RestartMenu" method="_on_sell_button_button_up"]
+[connection signal="money_amount_changed" from="UI/Bank" to="UI/Bank/View/MoneyAmount" method="_on_bank_money_amount_changed"]
+[connection signal="button_up" from="UI/StartMenu/StartButton" to="UI/StartMenu" method="_on_start_button_button_up"]
+[connection signal="button_up" from="UI/StartMenu/UpgradeButton" to="UI/StartMenu" method="_on_upgrade_button_button_up"]
+[connection signal="button_up" from="UI/StartMenu/UpgradeButton" to="UI/StartMenu/UpgradeButton" method="_on_button_up"]
+[connection signal="button_up" from="UI/StartMenu/CoefButton" to="UI/StartMenu/CoefButton" method="_on_button_up"]
+[connection signal="body_entered" from="FinishContainer/FinishMesh/FinishArea" to="." method="_on_finish_body_entered"]
+[connection signal="body_entered" from="FinishContainer/PrepareFinishArea" to="FinishContainer/FinishMesh" method="_on_prepare_finish_area_body_entered"]
