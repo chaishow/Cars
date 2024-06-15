@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://b5j8rmjmuwuql"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_8rtrs"]
-[ext_resource type="PackedScene" uid="uid://dxmjq0rl3fycr" path="res://road_piece.tscn" id="1_txisy"]
+[ext_resource type="PackedScene" uid="uid://dxmjq0rl3fycr" path="res://materials/meshes/road_piece.tscn" id="1_txisy"]
 [ext_resource type="PackedScene" uid="uid://ddqexnw8rautf" path="res://Player/Player.tscn" id="3_cfewi"]
 [ext_resource type="Texture2D" uid="uid://1boeahqy1vvx" path="res://sky.png" id="4_es5e0"]
 [ext_resource type="Theme" uid="uid://bru0g8axplnqk" path="res://materials/new_theme.tres" id="5_c323c"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://WorldEnvironment.gd" id="5_rg4df"]
 [ext_resource type="Script" path="res://Bank.gd" id="6_8cf4v"]
 [ext_resource type="Script" path="res://MoneyAmount.gd" id="7_mx43n"]
-[ext_resource type="Texture2D" uid="uid://cdruli06hankn" path="res://moneypic.png" id="8_6otee"]
+[ext_resource type="Texture2D" uid="uid://cdruli06hankn" path="res://materials/moneypic.png" id="8_6otee"]
 [ext_resource type="Script" path="res://StartMenu.gd" id="9_0e1ri"]
 [ext_resource type="Script" path="res://UpgradeButton.gd" id="10_bwfli"]
 [ext_resource type="Script" path="res://LevelLabel.gd" id="10_dv27v"]

@@ -18,6 +18,7 @@ var mouse_velocity = 0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var score = 0
+
 signal score_changed(score)
 signal player_reseted()
 
