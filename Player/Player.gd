@@ -46,8 +46,6 @@ func _input(event):
 		if event is InputEventMouseMotion and mouse_is_pressed:
 				mouse_velocity = event.relative[0]
 
-		
-	
 
 func _process(delta):
 	if can_move:
@@ -63,7 +61,6 @@ func _process(delta):
 				velocity.x = -curent_speed
 			elif mouse_velocity < 0:
 				velocity.x = curent_speed
-			
 		
 		move_and_slide()
 
